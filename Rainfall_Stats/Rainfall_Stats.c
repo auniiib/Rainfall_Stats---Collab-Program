@@ -1,9 +1,9 @@
-// Programmer:		Your Name
-// Date:			Date
-// Program Name:	The name of the program
-// Chapter:			Chapter # - Chapter name
-// Description:		2 complete English sentences describing what the program does,
-//					algorithm used, etc.
+// Programmer:		Au'Nystee Wakefield & Octavia Hunnicutt
+// Date:		3/30/2023
+// Program Name:	Rainfall Stats
+// Chapter:		Chapter 5 - Arrays
+// Description:		This program display the total and average rainfall for a year.
+//			This program also displays the lowest and highest rainfalls with the corresponding month.
 
 #define _CRT_SECURE_NO_WARNINGS // Disable warnings (and errors) when using non-secure versions of printf, scanf, strcpy, etc.
 #include <stdio.h> // Needed for working with printf and scanf
