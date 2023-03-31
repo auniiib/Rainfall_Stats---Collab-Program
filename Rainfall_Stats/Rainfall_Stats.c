@@ -19,8 +19,8 @@ int main(void)
 	double averageRain; // Variable to store the average amount of rainfall
 	double lowestAmount = 0.0; // Variable to store the lowestAmount of rainfall 
 	double highestAmount = 0.0; // Variable to store the highestAmount of rainfall
-	char x; // Placeholder varible to get the month of the highestAmount of rainfall
-	char y; // Placeholder varible to get the month of the lowestAmount of rainfall
+	char x[4]; // Placeholder varible to get the month of the highestAmount of rainfall
+	char y[4]; // Placeholder varible to get the month of the lowestAmount of rainfall
 
 	// *** INPUT ***
 	for (i = 0; i < MONTHS_PER_YEAR; ++i)
@@ -43,17 +43,17 @@ int main(void)
 	for (i = 0; i < MONTHS_PER_YEAR; ++i)
 	{
 		//  if the current value is larger
-		if (monthlyRainfallInches[i] > highestAmount) 
+		if (monthlyRainfallInches[i] > highestAmount)
 		{ // the for loop runs through each month and as the value in monthlyRainfallInches 
 			highestAmount = monthlyRainfallInches[i]; // is higher than the value of highestAmount. the value is then assigned as the highestAmount
-			 // the iterable is assigned to x as a placeholder to put within the MONTHS_NAMES array.
+			strcpy(x, MONTH_NAMES[i]); // the iterable is assigned to x as a placeholder to put within the MONTHS_NAMES array.
 		}
-		if (monthlyRainfallInches[i] < lowestAmount) 
+
+		if (monthlyRainfallInches[i] < lowestAmount)
 		{ // the for loop runs through each month and as the value in monthlyRainfallInches
 			lowestAmount = monthlyRainfallInches[i]; // is lower than the value of lowestAmount. the value is then assigned as the lowestAmount
-			 // the iterable is assigned to y as a placeholder to put within the MONTHS_NAMES array.
+			strcpy(y, MONTH_NAMES[i]); // the iterable is assigned to y as a placeholder to put within the MONTHS_NAMES array.
 		}
-		
 	}
 
 	// *** OUTPUT ***
@@ -82,9 +82,9 @@ int main(void)
 	printf("\n");
 	printf("The average monthly rainfall was %.1lf inches.", averageRain);
 	printf("\n");
-	printf("The lowest monthly rainfall was %.1lf inches in %s.", lowestAmount);
+	printf("The lowest monthly rainfall was %.1lf inches in %s.", lowestAmount, x);
 	printf("\n");
-	printf("The highest monthly rainfall was %.1lf inches in %s.", highestAmount);
+	printf("The highest monthly rainfall was %.1lf inches in %s.", highestAmount, y);
 	printf("\n");
 
 	return 0;
